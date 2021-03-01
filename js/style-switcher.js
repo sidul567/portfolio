@@ -1,33 +1,30 @@
 //--- toggle style ---//
 
-const styleSwitchToggler = document.querySelector(".style-switcher-toggler")
-
-styleSwitchToggler.addEventListener('click',()=>{
-    document.querySelector('.style-switcher').classList.toggle("open");
-})
-
-//hide when scroll
-
 window.addEventListener('scroll',()=>{
     if(document.querySelector('.style-switcher').classList.contains("open")){
         document.querySelector('.style-switcher').classList.remove("open")
     }
 })
 
-let alternateStyles = document.querySelectorAll('.alternate-style')
-function setActiveStyle(color){
+document.body.addEventListener('click',(e)=>{
+    if(e.target.classList.contains("style-switcher-toggler")){
+        document.querySelector('.style-switcher').classList.toggle("open");
+    }else{
+        document.querySelector('.style-switcher').classList.remove("open");
+    }    
+})
+//color change
+
+let colorValue = document.getElementById('colorValue');
+colorValue.addEventListener('input',(e)=>{
+    color = e.target.value
     localStorage.setItem("color",color)
     changeColor()
-}
+})
 
 function changeColor(){
-    alternateStyles.forEach((style)=>{
-        if(localStorage.getItem("color")===style.title){
-            style.removeAttribute("disabled")
-        }else{
-            style.setAttribute("disabled","true")
-        }
-    })
+    document.documentElement.style.setProperty('--skin-color', localStorage.getItem("color"));
+    colorValue.value = localStorage.getItem("color")
 }
 if(localStorage.getItem("color")!==null){
     changeColor()

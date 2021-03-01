@@ -78,7 +78,23 @@
     .home-section .home-img .img-box{
         max-width: 260px;
     }
-    .home-section .home-text h2{
+    .home-section .home-text h2,
+    .home-section .home-text h2 span{
         font-size: 40px;
+        max-width: 300px;
+    }
+    .home-section .home-text h2::after{
+        width: 15px;
+    }
+    .about-section .skills .skill-item .progress-bar span{
+        margin-left: 145px;
+    }
+    .effect-4 {
+        left: 15%;
+        top: 13%;
+    }
+    .effect-5 {
+        right: 7%;
+        top: 42%;
     }
 }

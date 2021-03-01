@@ -8,11 +8,6 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
   <!-- main css -->
   <link rel="shortcut icon" href="img/LogoMakr-7tgoWl.png" type="image/x-icon">
-  <link title="color-1" rel="stylesheet" href="css/skins/color-1.css" class="alternate-style">
-  <link title="color-2" rel="stylesheet" href="css/skins/color-2.css" disabled class="alternate-style">
-  <link title="color-3" rel="stylesheet" href="css/skins/color-3.css" disabled class="alternate-style">
-  <link title="color-4" rel="stylesheet" href="css/skins/color-4.css" disabled class="alternate-style">
-  <link title="color-5" rel="stylesheet" href="css/skins/color-5.css" disabled class="alternate-style">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="css/style-switcher.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -80,7 +75,7 @@
     <div class="row full-screen align-items-center">
       <div class="home-text">
         <p>Hello</p>
-        <h2>I'm Sidul Islam Moon</h2>
+        <h2>I'm <span id="myName"></span></h2>
         <h1>Web Designer & Developer</h1>
         <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More about me</a>
       </div>
@@ -772,12 +767,13 @@
   </div>
   <h4>Theme Colors</h4>
   <div class="colors">
-    <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+    <!-- <span class="color-1" onclick="setActiveStyle('color-1')"></span>
     <span class="color-2" onclick="setActiveStyle('color-2')"></span>
     <span class="color-3" onclick="setActiveStyle('color-3')"></span>
     <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-    <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+    <span class="color-5" onclick="setActiveStyle('color-5')"></span> -->
    </div> 
+   <input type="color" value="#6732e2" id="colorValue">
   </div>
 
 <!-- Style switcher end -->

@@ -1,6 +1,46 @@
 // ABOUT SECTION
 (()=>{
 
+    //Auto write
+    
+    let myName = document.getElementById('myName');
+    let nameArr = [
+        "Sidul Islam Moon",
+        "a Web Developer",
+        "a Wordpress Developer"
+    ];
+    let i = 0,k = 0;
+    let p = nameArr[k].length;
+    watch = false;
+    const timer = setInterval(()=>{
+        
+        if(i<nameArr[k].length){
+            if(k==0){
+                myName.style.color = "var(--skin-color)"
+            }else{
+                myName.style.color = "var(--text-black-900)"
+            }
+            myName.innerHTML += nameArr[k][i];
+            i++;
+        }else{
+            // myName.innerHTML = ""
+            if(p>=0){
+                myName.innerHTML = nameArr[k].slice(0,p);
+                p--;
+            }else{
+                if(!watch){
+                    k = (k+1)%nameArr.length;
+                    i = 0;
+                    watch = true;
+                }else{
+                    p = nameArr[k].length;
+                    watch = false;
+                }
+            }
+        } 
+    },100)
+    
+    
     //---Navigation menu------
     navigationMenu()
 
@@ -26,8 +66,8 @@
         if(window.scrollY>=Math.floor(el.getBoundingClientRect().top)){
             for(let i=0;i<progressBar.length;i++){
                 let sp = parseInt(progressBar[i].dataset.spin)
-                let num = Math.floor(526 * sp/100);
-                progressBar[i].style.width = `${num}px`
+                // let num = Math.floor(526 * sp/100);
+                progressBar[i].style.width = `calc(${sp}% - 14px)`
                 progressBar[i].style.animationPlayState = 'running'
             }
         }

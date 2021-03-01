@@ -71,3 +71,9 @@
 .style-switcher .color-5{
     background-color: #cc3a3b;
 }
+#colorValue{
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 30px;
+}

@@ -19,6 +19,7 @@
     --outer-shadow-0 : 0 0 0 #d0d0d0,0 0 0 #f8f8f8;
     --inner-shadow : inset 3px 3px 3px #d0d0d0,inset -3px -3px 3px #f8f8f8;
     --inner-shadow-0 : inset 0 0 0 #d0d0d0,inset 0 0 0 #f8f8f8;
+    --skin-color : #6732e2;
 }
 body.dark{
     --bg-black-900 : #ffffff;
@@ -503,11 +504,22 @@ img{
     text-transform: capitalize;
     margin: 0;
 }
-.home-section .home-text h2{
+.home-section .home-text h2,
+.home-section .home-text h2 span{
     font-size: 54px;
     font-weight: 700;
     color: var(--text-black-900);
     margin: 0;
+    position: relative;
+}
+.home-section .home-text h2::after{
+    position: absolute;
+    content: '';
+    height: 5px;
+    width: 25px;
+    background: var(--skin-color);
+    bottom: 15px;
+    margin-left: 15px;
 }
 .home-section .home-text h1{
     font-size: 20px;
